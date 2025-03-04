@@ -1,0 +1,47 @@
+name: puzzle-chain-finder
+
+version: '3.8'
+
+services:
+  puzzle-finder:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: puzzle-finder
+    ports:
+      - "8080:80"      # Web access: Host port 8080 maps to container port 80 (Nginx)
+      - "5000:5000"    # API direct access: Host port 5000 maps to container port 5000 (Flask)
+    volumes:
+      - ./backend/data:/app/data:ro  # Read-only mount for puzzle data
+      - type: bind
+        source: ./backend/exports
+        target: /app/exports
+      - type: bind
+        source: ./backend/logs
+        target: /app/logs
+      - ./backend/src:/app/src                  # Source code
+      - ./frontend:/app/static                  # Frontend static files
+    user: puzzleapp
+    environment:
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_DEBUG=True
+      - STATIC_FOLDER=static
+      - TIMEOUT=3600
+      - PORT=5000
+      - IN_DOCKER=true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health || curl -f http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  data:
+  exports:
+  logs:

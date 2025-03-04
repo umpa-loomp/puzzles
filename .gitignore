@@ -1,0 +1,20 @@
+# Python-specific ignores
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# IDEs
+.idea/
+.vscode/
+
+# Logs and exports (but keep directories)
+/backend/logs/*
+!/backend/logs/.gitkeep
+/backend/exports/*
+!/backend/exports/.gitkeep
+
+# Never ignore puzzle data files
+!/backend/data/*.txt

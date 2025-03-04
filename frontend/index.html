@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Chain Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Puzzle Chain Finder</h1>
+        <div id="status-container">
+            <span id="status" class="status">Ready</span>
+            <div id="loading-indicator" class="spinner"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="dataset-section">
+                <h2>Select Dataset</h2>
+                <div class="panel">
+                    <div class="control-group">
+                        <label for="predefined-datasets">Choose a predefined dataset:</label>
+                        <select id="predefined-datasets">
+                            <option value="">-- Select Dataset --</option>
+                        </select>
+                    </div>
+                    
+                    <div class="separator">OR</div>
+                    
+                    <div class="control-group">
+                        <label for="dataset-file">Upload your own dataset:</label>
+                        <div class="file-input-container">
+                            <input type="file" id="dataset-file" accept=".txt">
+                            <span id="file-name">No file selected</span>
+                        </div>
+                        <button id="load-dataset-btn" class="primary-button">Load Dataset</button>
+                    </div>
+                    
+                    <div class="dataset-info">
+                        <p>Current dataset: <span id="current-dataset">None</span></p>
+                        <p>Total puzzles: <span id="puzzle-count">0</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="chain-section">
+                <h2>Find Longest Chain</h2>
+                <div class="panel">
+                    <div class="control-group">
+                        <label for="timeout">Search timeout (seconds):</label>
+                        <input type="number" id="timeout" value="60" min="1" max="600">
+                        <button id="find-chain-btn" class="primary-button" disabled>Find Longest Chain</button>
+                    </div>
+                    
+                    <div class="results-summary">
+                        <div class="result-stat">
+                            <span class="label">Chain Length:</span>
+                            <span id="chain-length" class="value">-</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="label">Processing Time:</span>
+                            <span id="processing-time" class="value">-</span>
+                        </div>
+                        <button id="export-chain-btn" class="secondary-button" disabled>Export Chain</button>
+                        <!-- The new buttons will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="chain-details-section">
+                <h2>Chain Details</h2>
+                <div class="panel">
+                    <div id="chain-container"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Puzzle Chain Finder &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

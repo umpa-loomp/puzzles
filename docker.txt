@@ -1,0 +1,11 @@
+=> [puzzle-finder] resolving provenance for metadata file                                  0.1s 
+[+] Running 3/3
+ ✔ puzzle-finder                        Built                                               0.0s 
+ ✔ Network puzzle-chain-finder_default  Created                                             0.6s 
+ ✔ Container puzzle-finder              Created                                             8.2s 
+Attaching to puzzle-finder
+puzzle-finder  | Traceback (most recent call last):
+puzzle-finder  |   File "/app/main.py", line 3, in <module>
+puzzle-finder  |     from flask import Flask, jsonify, request, send_from_directory, Response    
+puzzle-finder  | ModuleNotFoundError: No module named 'flask'
+Gracefully stopping... (press Ctrl+C again to force)

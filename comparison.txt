@@ -1,0 +1,112 @@
+
+Loaded 142 puzzles from C:\users\hi\puzzles\source.txt
+Building graph from 142 puzzles...
+Built graph with 142 nodes and 220 connections
+
+===== Testing algorithm: iterative_dfs =====
+DFS completed in 0.01s, processed 70 operations
+Found longest path with 39 nodes
+Algorithm completed in 0.01 seconds
+Path length: 39
+
+First 5 puzzles in the chain:
+1. ID 46: #675840 - Takes: 67, Gives: 40
+2. ID 50: #401733 - Takes: 40, Gives: 33
+3. ID 34: #331413 - Takes: 33, Gives: 13
+4. ID 85: #139340 - Takes: 13, Gives: 40
+5. ID 76: #409432 - Takes: 40, Gives: 32
+...
+
+Last 5 puzzles in the chain:
+35. ID 130: #961201 - Takes: 96, Gives: 01
+36. ID 137: #013153 - Takes: 01, Gives: 53
+37. ID 61: #535119 - Takes: 53, Gives: 19
+38. ID 97: #193536 - Takes: 19, Gives: 36
+39. ID 44: #367493 - Takes: 36, Gives: 93
+
+===== Testing algorithm: dp =====
+DP completed in 162.25s
+Found longest path with 65 nodes
+Algorithm completed in 162.38 seconds
+Path length: 65
+
+First 5 puzzles in the chain:
+1. ID 2: #498291 - Takes: 49, Gives: 91
+2. ID 51: #915348 - Takes: 91, Gives: 48
+3. ID 31: #488310 - Takes: 48, Gives: 10
+4. ID 90: #100107 - Takes: 10, Gives: 07
+5. ID 20: #074878 - Takes: 07, Gives: 78
+...
+
+Last 5 puzzles in the chain:
+61. ID 102: #322736 - Takes: 32, Gives: 36
+62. ID 55: #368753 - Takes: 36, Gives: 53
+63. ID 61: #535119 - Takes: 53, Gives: 19
+64. ID 97: #193536 - Takes: 19, Gives: 36
+65. ID 44: #367493 - Takes: 36, Gives: 93
+
+===== Testing algorithm: bidirectional =====
+Bidirectional search completed in 0.14s
+Found longest path with 19 nodes
+Algorithm completed in 0.15 seconds
+Path length: 19
+
+First 5 puzzles in the chain:
+1. ID 123: #272007 - Takes: 27, Gives: 07
+2. ID 20: #074878 - Takes: 07, Gives: 78
+3. ID 106: #781184 - Takes: 78, Gives: 84
+4. ID 18: #847595 - Takes: 84, Gives: 95
+5. ID 54: #958675 - Takes: 95, Gives: 75
+...
+
+Last 5 puzzles in the chain:
+15. ID 138: #417085 - Takes: 41, Gives: 85
+16. ID 108: #851005 - Takes: 85, Gives: 05
+17. ID 111: #051202 - Takes: 05, Gives: 02
+18. ID 19: #021597 - Takes: 02, Gives: 97
+19. ID 28: #976151 - Takes: 97, Gives: 51
+
+===== Testing algorithm: a_star =====
+A* search completed in 275.21s
+Found longest path with 64 nodes
+Algorithm completed in 592.98 seconds
+Path length: 64
+
+First 5 puzzles in the chain:
+1. ID 50: #401733 - Takes: 40, Gives: 33
+2. ID 34: #331413 - Takes: 33, Gives: 13
+3. ID 85: #139340 - Takes: 13, Gives: 40
+4. ID 57: #401341 - Takes: 40, Gives: 41
+5. ID 101: #412134 - Takes: 41, Gives: 34
+...
+
+Last 5 puzzles in the chain:
+60. ID 130: #961201 - Takes: 96, Gives: 01
+61. ID 137: #013153 - Takes: 01, Gives: 53
+62. ID 61: #535119 - Takes: 53, Gives: 19
+63. ID 97: #193536 - Takes: 19, Gives: 36
+64. ID 44: #367493 - Takes: 36, Gives: 93
+
+===== Testing algorithm: topo =====
+Topological sort completed in 0.04s
+Found longest path with 5 nodes
+Algorithm completed in 0.06 seconds
+Path length: 5
+
+First 5 puzzles in the chain:
+1. ID 69: #716890 - Takes: 71, Gives: 90
+2. ID 35: #905657 - Takes: 90, Gives: 57
+3. ID 63: #577779 - Takes: 57, Gives: 79
+4. ID 59: #794373 - Takes: 79, Gives: 73
+5. ID 49: #735564 - Takes: 73, Gives: 64
+
+===== ALGORITHM COMPARISON =====
+Algorithm       Length     Time (s)
+-----------------------------------
+iterative_dfs   39         0.01
+dp              65         162.38
+bidirectional   19         0.15
+a_star          64         592.98
+topo            5          0.06
+
+Best result: dp with length 65 in 162.38s
